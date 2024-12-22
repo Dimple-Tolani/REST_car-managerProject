@@ -31,10 +31,10 @@ This project is a **Spring Boot-based REST API** application that provides a sys
 
 ## API Endpoints 📖
 
-**GET**:     	http://localhost:9090/api/cars/cars	Retrieve all cars.
-**POST**:     http://localhost:9090/api/cars/cars	Add a new car.
-**PUT**:  	  http://localhost:9090/api/cars/cars/{id}	Update a car by ID.
-**DELETE**: 	http://localhost:9090/api/cars/cars/{id}	Delete a car by ID.
+- **GET**:     	http://localhost:9090/api/cars/cars	Retrieve all cars.
+- **POST**:     http://localhost:9090/api/cars/cars	Add a new car.
+- **PUT**:  	  http://localhost:9090/api/cars/cars/{id}	Update a car by ID.
+- **DELETE**: 	http://localhost:9090/api/cars/cars/{id}	Delete a car by ID.
 
 ## API Documentation 📄
 Access Swagger UI for interactive API documentation:
