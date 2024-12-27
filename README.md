@@ -20,10 +20,11 @@ This project is a **Spring Boot-based REST API** application that provides a sys
  
 ## Project Structure 🗂️
 The project follows the standard **Spring Boot MVC structure**:
+  ```
   com.carstop.car_manager
     ├── controller
     │   └── CarController.java               # Handles API requests 
-     ├── entity
+    ├── entity
     │   └── Car.java                         # model
     │   └── CarEntity.java                   # Entity class for Car
     ├── service
@@ -32,6 +33,7 @@ The project follows the standard **Spring Boot MVC structure**:
     ├── repository
     │   └── CarRepository.java               # JPA Repository
     └── CarManagerApplication.java           # Main application entry point
+```
  
 ## Technologies Used 🛠️
 - **Backend Framework**: Spring Boot (v3.4.1)
@@ -47,30 +49,37 @@ The project follows the standard **Spring Boot MVC structure**:
 4. **Postman**: For API testing.
 
 ## Setup Instructions 🛠️
-1. Clone the Repositor
-   ```bash : git clone REPO_URL
+1. Clone the Repository.
 3. Edit the application.properties file in resources folder with your database details
 4. Build and Run the application.
 
-The application will start on http://localhost:9090.
+The application will start on:
+```http://localhost:9090```
 
 ## API Endpoints 📖
 Car Management
-- **GET**:        http://localhost:9090/api/cars/cars	                         # Retrieve all cars.
-- **POST**:       http://localhost:9090/api/cars/cars	                         # Add a new car.
-- **PUT**:        http://localhost:9090/api/cars/cars/{id}	                   # Update a car by ID.
-- **DELETE**:     http://localhost:9090/api/cars/cars/{id}	                   # Delete a car by ID.
+
+- **GET**: Retrieve all cars.
+```http://localhost:9090/api/cars/cars```
+
+- **POST**: Add a new car.
+```http://localhost:9090/api/cars/cars```
+- **PUT**: Update a car by ID.
+```http://localhost:9090/api/cars/cars/{id}```
+- **DELETE**: Delete a car by ID.
+```http://localhost:9090/api/cars/cars/{id}```
 
 Global Search
-- **GET**:        http://localhost:9090/api/cars/search?keyword?KEYWORD        # Search cars by name, model, year, color, or fuel type.
+- **GET**: Search cars by name, model, year, color, or fuel type.
+```http://localhost:9090/api/cars/search?keyword?KEYWORD```
 
 ## API Documentation 📄
 Access Swagger UI for interactive API documentation:
-http://localhost:9090/swagger-ui/index.html
+```http://localhost:9090/swagger-ui/index.html```
 
 ## Contact 📬
-Name: Dimple Tolani
-Email: dimpletolani1602@gmail.com
+Name: Dimple Tolani || 
+Email: dimpletolani1602@gmail.com || 
 GitHub: Dimple-Tolani
 
 
