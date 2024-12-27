@@ -1,5 +1,6 @@
 package com.carstop.car_manager.controller;
 
+import com.carstop.car_manager.entity.CarEntity;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 @RestController
 @RequestMapping("/api/cars/")
-public class CarController {
+public class    CarController {
     @Autowired
     CarService carservice; //Dependency Injection
+
     @GetMapping("cars")
     public List<Car> getAllCars(){
         return carservice.readEntries();
@@ -40,5 +42,10 @@ public class CarController {
     @PutMapping("cars/{id}")
     public String updateEntry(@PathVariable  @Min(1) Long id,@Valid @RequestBody Car car){
         return carservice.updateEntry(id, car);
+    }
+
+    @GetMapping("/search")
+    public List<Car> searchEntry(@RequestParam String keyword) {
+        return carservice.searchEntry(keyword);
     }
 }

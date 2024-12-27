@@ -14,4 +14,5 @@ public interface CarService {
     boolean deleteEntry(Long id);
     String updateEntry(Long id, Car car);
     Car readEntry(Long id);
+    List<Car> searchEntry(String keyword);
 }

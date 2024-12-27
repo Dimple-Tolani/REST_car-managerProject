@@ -13,28 +13,28 @@ public class CarEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 2, max = 50)
+    @NotNull(message = "Car name is required")
+    @Size(min = 2, max = 50, message = "Car name must be between 2 and 50 characters")
     private String name;
 
-    @NotNull
-    @Size(min = 2, max = 50)
+    @NotNull(message = "Model is required")
+    @Size(min = 2, max = 50, message = "Model must be between 2 and 50 characters")
     private String model;
 
-    @NotNull
-    @Min(value = 1900)
-    @Max(value = 2025)
+    @NotNull(message = "Year is required")
+    @Min(value = 1900, message = "Year must be after 1886")
+    @Max(value = 2025, message = "Invalid year")
     private Integer year;
 
-    @NotNull
-    @Min(value = 1000)
+    @NotNull(message = "Price is required")
+    @Min(value = 1000, message = "Price must be a positive value")
     private Long price;
 
-    @NotNull
-    @Size(min = 3, max = 20)
+    @NotNull(message = "Color is required")
+    @Size(min = 3, max = 20,  message = "Color must be between 3 and 20 characters")
     private String color;
 
-    @NotNull
-    @Pattern(regexp = "Petrol|Diesel|Electric|Hybrid")
+    @NotNull(message = "Fuel type is required")
+    @Pattern(regexp = "Petrol|Diesel|Electric|Hybrid", message = "Fuel type must be Petrol, Diesel, Electric, or Hybrid")
     private String fuel;
 }

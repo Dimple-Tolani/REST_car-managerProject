@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 @Service
 public class CarServiceImp implements CarService{
     @Autowired
@@ -48,6 +50,22 @@ public class CarServiceImp implements CarService{
         Car car = new Car();
         BeanUtils.copyProperties(carE, car);
         return car;
+    }
+
+    @Override
+    public List<Car> searchEntry(String keyword) {
+        List<CarEntity> entities = carRepository.searchEntry(keyword);
+        return entities.stream()
+                .map(entity -> new Car(
+                        entity.getId(),
+                        entity.getName(),
+                        entity.getModel(),
+                        entity.getYear(),
+                        entity.getPrice(),
+                        entity.getColor(),
+                        entity.getFuel()
+                ))
+                .collect(Collectors.toList());
     }
 
     @Override
